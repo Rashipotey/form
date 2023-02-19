@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <center>
+        <div>
+        <form action="post" id="form" name="regForm" onsubmit="checkForm()">
+            <h1 style="text-align: left;">Registration Form</h1>
+            <div class="container">
+            <span class="span1"><strong>User ID</strong><span style="color:red;">*</span></span>
+              <input name="userId" class="input" oninput="uIdValidate()" value="" id="i1" type="text" required > (5-12 character long)
+            <br><span id="msg2" style="color:red"></span>
+        </div>
+            <br><br>
+            <div class="container1">
+            <span class="span2"><strong>Password</strong><span style="color:red;">*</span></span> <input name="password" class="input" id="myInput" oninput="verifyPassword()" type="password" value="" required><input type="checkbox" name="check" id="check" onclick="myFunction()">👁 (7-12 character long)
+            <br><span id="message" style="color: red;"></span>
+        </div>
+            <br><br>
+            <div class="container">
+            <span class="span3"><strong>Name</strong><span style="color:red;">*</span></span> <input name="name" value="" oninput="nameValidate()" class="input" id="i2" type="text" required>
+            <br><span id="msg1" style="color:red;"></span>
+        </div>
+            <br><br>
+            <div class="container1">
+            <span class="span4"><strong>Address</strong></span> <textarea style="height:80px; width:500px;" name="address" oninput="adrValidate()" value="" id="i3" id="input" cols="30" rows="10"></textarea>
+        </div>
+            <br><br>
+            <div class="container">
+            <span class="span5"><strong>Country</strong><span style="color:red;">*</span></span> <select onclick="cntryValidate()" name="Country" id="country" value="" required>
+                <option value="select">select</option>
+                <option value="India">India</option>
+                <option value="Unites States of America">Unites States Of America</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="China">China</option>
+                <option value="Korea">Korea</option>
+                <option value="Dubai">Dubai</option>
+                <option value="else"></option>
+            </select>
+            <br><span id="msg3" style="color:red;"></span>
+        </div>
+            <br><br>
+            <div class="container1">
+            <span class="span1"><strong>ZIP Code</strong><span style="color:red;">*</span></span> <input name="zipCode" value="" oninput="zipValidate()" class="input" id="i4" type="text" required>
+            <br><span id="msg4" style="color:red;"></span>
+        </div>
+            <br><br>
+            <div class="container">
+            <span class="span2"><strong>Email</strong><span style="color:red;">*</span></span> <input name="email" oninput="emailValidate()" class="input" id="i5" type="text" required>
+            <br><span id="msg5" style="color:red;"></span>
+        </div>
+            <br><br>
+            <div class="container1">
+            <span class="span3" required><strong>Gender</strong><span style="color:red;">*</span></span></label>
+            <input type="radio" id="i6" name="gender" value="male"><span class="s"><strong>Male</strong></span> <input type="radio" id="i6" name="gender" value="female"><span class="s"><strong>Female</strong></span>
+        </div>
+            <br><br>
+            <div class="container">
+            <span class="span4" required><strong>Language</strong><span style="color:red;">*</span></span> <input type="checkbox" id="i7" name="language" value="english"><span class="s"><strong>English</strong></span> <input type="checkbox" id="i7" name="language" onclick="otherLang()" value="non-english"><span class="s"><strong>Not English</strong></span>
+            <br>
+        </div>
+            <br><br>
+            <div class="container1">
+            <label for="" class="span5"><strong>About</strong></label>
+            <textarea style="height:80px; width:500px;" name="" id="i8" cols="30" rows="10"></textarea>
+        </div>
+            <br><br>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+    </center>
+</body>
+<script src="index.js"></script>
+</html>
