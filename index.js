@@ -20,6 +20,10 @@ function verifyPassword(){
             document.getElementById("message").innerHTML="Password too big!";
             return false;
           }
+    else if(pw.length>=8 && pw.length<=11)
+    {
+        document.getElementById("message").innerHTML=" ";
+    }
           else{
             document.getElementById("message").innerHTMl=" ";
             return true;
