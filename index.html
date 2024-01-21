@@ -10,7 +10,7 @@
 <body>
     <center>
         <div>
-        <form action="post" id="form" name="regForm" onsubmit="checkForm()">
+        <form action="post" id="form" name="submit-to-google-sheet" onsubmit="checkForm()">
             <h1 style="text-align: left;">Registration Form</h1>
             <div class="container">
             <span class="span1"><strong>User ID</strong><span style="color:red;">*</span></span>
@@ -75,6 +75,17 @@
         </form>
     </div>
     </center>
+    <script>
+  const scriptURL = '<https://script.google.com/macros/s/AKfycbzof7wNVb0Iq4NHxjcA1EeRSrGNQV9rT5eWnjBfI3F14S3VFNolnXUD5jaeA8xsX5N7AA/exec>'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 <script src="index.js"></script>
 </html>
